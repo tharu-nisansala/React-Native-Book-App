@@ -9,7 +9,7 @@ const generateToken = (userId) => {
   return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: "15d" });
 };
 
-// 🟢 REGISTER ROUTE
+// REGISTER ROUTE
 router.post("/register", async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -33,7 +33,7 @@ router.post("/register", async (req, res) => {
       return res.status(400).json({ message: "Username already exists" });
     }
 
-    // ✅ FIXED: Use PNG instead of SVG (Expo can’t display SVG images)
+    // FIXED: Use PNG instead of SVG (Expo can’t display SVG images)
     const profileImage = `https://api.dicebear.com/7.x/avataaars/png?seed=${username}`;
 
     // Create new user
@@ -64,7 +64,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// 🟢 LOGIN ROUTE
+// LOGIN ROUTE
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;

@@ -7,7 +7,7 @@ import { formatMemberSince } from '@/lib/utils';
 export default function ProfileHeader() {
   const { user } = useAuthStore();
 
-  // 👇 Check if user is null before rendering
+  // Check if user is null before rendering
   if (!user) {
     return (
       <View style={styles.profileHeader}>
